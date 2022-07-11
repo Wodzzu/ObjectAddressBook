@@ -10,7 +10,7 @@ using namespace std;
 
 class PlikZUzytkownikami
 {
-    string nazwaPlikuZUzytkownikami;
+   const string nazwaPlikuZUzytkownikami;
         fstream plikTekstowy;
 Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
     bool czyPlikJestPusty();
@@ -18,7 +18,7 @@ string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik
 
 public:
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
-    PlikZUzytkownikami();
+    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI) {};
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
 
 };

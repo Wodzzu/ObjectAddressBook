@@ -11,9 +11,8 @@ using namespace std;
 class PlikZUzytkownikami
 {
    const string nazwaPlikuZUzytkownikami;
-        fstream plikTekstowy;
 Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
-    bool czyPlikJestPusty();
+    bool czyPlikJestPusty(fstream &plikTekstowy);
 string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
 
 public:

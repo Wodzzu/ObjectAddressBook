@@ -7,7 +7,7 @@
 
 #include "PlikZUzytkownikami.h"
 #include "Uzytkownik.h"
-
+#include "AdresatMenedzer.h"
 
 using namespace std;
 

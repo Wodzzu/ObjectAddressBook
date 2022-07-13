@@ -3,36 +3,22 @@
 
 #include <iostream>
 #include <vector>
-#include <fstream>
-
 
 
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
+#include "PlikZAdresatami.h"
 
 using namespace std;
 
 class AdresatMenedzer
 {
-string nazwaPlikuZAdresatami;
-
-int idOstatniegoAdresata;
+PlikZAdresatami plikZAdresatami;
 vector <Adresat> adresaci;
-
-
-int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
-int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-
 Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
-void dopiszAdresataDoPliku(Adresat adresat);
-string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
-bool czyPlikJestPusty(fstream &plikTekstowy);
 
 public:
-AdresatMenedzer();
-
-int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int noweId);
 void ustawIdOstatniegoAdresata(int noweId);
 int pobierzIdOstaniegoAdresata();
 int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);

@@ -14,16 +14,19 @@
 class PlikZAdresatami
 {
 int idOstatniegoAdresata;
-string nazwaPlikuZAdresatami = "Adresaci.txt";
-public:
-void dopiszAdresataDoPliku(Adresat adresat);
-int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika,vector <Adresat> &adresaci);
-string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+const string nazwaPlikuZAdresatami;
+
 bool czyPlikJestPusty(fstream &plikTekstowy);
+int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+
+public:
+PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
+void dopiszAdresataDoPliku(Adresat adresat);
+int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika,vector <Adresat> &adresaci);
 int ustawIdOstatniegoAdresata(int noweId);
-int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 int pobierzIdOstaniegoAdresata();
 
 };

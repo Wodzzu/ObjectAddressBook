@@ -17,4 +17,11 @@ public:
     void menuGlowne();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
+    void wypiszWszystkichAdresatow();
+    void ustawIdZalogowanegoUzytkownika();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void dodajAdresata();
+    void zmianaHaslaUzytkownika();
+    void wylogujUzytkownika();
+    bool czyWektorAdresatowJestPusty();
 };

@@ -14,10 +14,10 @@ using namespace std;
 
 class AdresatMenedzer
 {
-string nazwaPlikuZAdresatami = "Adresaci.txt";
+string nazwaPlikuZAdresatami;
 
 int idOstatniegoAdresata;
-
+vector <Adresat> adresaci;
 
 
 int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
@@ -31,12 +31,15 @@ bool czyPlikJestPusty(fstream &plikTekstowy);
 
 public:
 AdresatMenedzer();
-vector <Adresat> adresaci;
+
 int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 void ustawIdOstatniegoAdresata(int noweId);
 int pobierzIdOstaniegoAdresata();
 int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
-
+void wyswietlWszystkichAdresatow();
+void wyswietlDaneAdresata(Adresat adresat);
+void wyczyscDaneZWektoraAdresatow();
+bool czyWektorAdresatowJestPusty();
 };
 
 #endif

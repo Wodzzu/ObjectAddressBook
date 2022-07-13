@@ -18,6 +18,7 @@ vector <Adresat> adresaci;
 Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
 
 public:
+    AdresatMenedzer(string nazwaPlikuZAdresatami): plikZAdresatami(nazwaPlikuZAdresatami){};
 int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int noweId);
 void ustawIdOstatniegoAdresata(int noweId);
 int pobierzIdOstaniegoAdresata();

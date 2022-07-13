@@ -8,13 +8,8 @@ class KsiazkaAdresowa
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresatMenedzer adresatMenedzer;
     char wybor;
-public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami) {
-    uzytkownikMenedzer.wczytajUzytkownikowZPliku();
-    };
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
-    void menuGlowne();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wypiszWszystkichAdresatow();
@@ -24,4 +19,10 @@ public:
     void zmianaHaslaUzytkownika();
     void wylogujUzytkownika();
     bool czyWektorAdresatowJestPusty();
+
+public:
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), adresatMenedzer(nazwaPlikuZAdresatami) {
+    uzytkownikMenedzer.wczytajUzytkownikowZPliku();};
+    void menuGlowne();
+
 };

@@ -6,3 +6,6 @@
 6|3|Fala|Wodna|123|idzie|do plazy|
 7|3|Klaw|Mysza|123|email|adres|
 8|3|Asd|Hahahaha|hahaha|ajajaj|ajajja|
+9|5|Kon|Kon|nkon|nkon|nkon|
+10|5|0070|0707|07070|0707|0707|
+11|1|Mag|Mag|agm|agm|amg|

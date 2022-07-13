@@ -1,6 +1,19 @@
 #include "AdresatMenedzer.h"
 
+int AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int noweId)
+{
+   plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(noweId,adresaci);
+}
 
+int AdresatMenedzer::pobierzIdOstaniegoAdresata()
+{
+    plikZAdresatami.pobierzIdOstaniegoAdresata();
+}
+void AdresatMenedzer::ustawIdOstatniegoAdresata(int noweId)
+{
+      if(noweId>=0)
+    plikZAdresatami.ustawIdOstatniegoAdresata(noweId);
+}
 
 int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
@@ -14,12 +27,6 @@ int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatnie
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
     return ++idOstatniegoAdresata;
-}
-
-void AdresatMenedzer::ustawIdOstatniegoAdresata(int noweId)
-{
-      if(noweId>=0)
-    plikZAdresatami.ustawIdOstatniegoAdresata(noweId);
 }
 
 Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
@@ -47,16 +54,6 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
 
     return adresat;
 }
-
-
-
-
-
-int AdresatMenedzer::pobierzIdOstaniegoAdresata()
-{
-    plikZAdresatami.pobierzIdOstaniegoAdresata();
-}
-
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {
     system("cls");
@@ -97,7 +94,4 @@ bool AdresatMenedzer::czyWektorAdresatowJestPusty()
     else
         return false;
 }
-int AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int noweId)
-{
-   plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(noweId,adresaci);
-}
+

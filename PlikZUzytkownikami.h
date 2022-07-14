@@ -8,13 +8,12 @@
 
 using namespace std;
 
-class PlikZUzytkownikami
-{
-   const string nazwaPlikuZUzytkownikami;
+class PlikZUzytkownikami {
+    const string nazwaPlikuZUzytkownikami;
 
-Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
+    Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
     bool czyPlikJestPusty(fstream &plikTekstowy);
-string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
+    string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
 
 public:
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);

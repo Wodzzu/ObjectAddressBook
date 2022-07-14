@@ -1,11 +1,2 @@
-1|3|Konrad|Wodzu|4324123213|asdad@wodzu.pl|asaf123  swiatla 12|
-2|1|Michal|Gaj|123|adsmichal.pl|asdasd konowa|
-3|1|ania|Gaj|123|adsmichal.pl|asdasd konowa|
-4|1|kuba|Gaj|123|adsmichal.pl|asdasd konowa|
-5|1|natalia|Gaj|123|adsmichal.pl|asdasd konowa|
-6|3|Fala|Wodna|123|idzie|do plazy|
-7|3|Klaw|Mysza|123|email|adres|
-8|3|Asd|Hahahaha|hahaha|ajajaj|ajajja|
-9|5|Kon|Kon|nkon|nkon|nkon|
-10|5|0070|0707|07070|0707|0707|
-11|1|Mag|Mag|agm|agm|amg|
+1|1|Asd|Asd|asd|asd|asd|
+2|1|Asd|Asd|asd|asd|asd|

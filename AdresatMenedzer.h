@@ -11,22 +11,21 @@
 
 using namespace std;
 
-class AdresatMenedzer
-{
-PlikZAdresatami plikZAdresatami;
-vector <Adresat> adresaci;
-Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+class AdresatMenedzer {
+    PlikZAdresatami plikZAdresatami;
+    vector <Adresat> adresaci;
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
 
 public:
-    AdresatMenedzer(string nazwaPlikuZAdresatami): plikZAdresatami(nazwaPlikuZAdresatami){};
-int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int noweId);
-void ustawIdOstatniegoAdresata(int noweId);
-int pobierzIdOstaniegoAdresata();
-int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
-void wyswietlWszystkichAdresatow();
-void wyswietlDaneAdresata(Adresat adresat);
-void wyczyscDaneZWektoraAdresatow();
-bool czyWektorAdresatowJestPusty();
+    AdresatMenedzer(string nazwaPlikuZAdresatami): plikZAdresatami(nazwaPlikuZAdresatami) {};
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int noweId);
+    void ustawIdOstatniegoAdresata(int noweId);
+    int pobierzIdOstaniegoAdresata();
+    int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    void wyswietlWszystkichAdresatow();
+    void wyswietlDaneAdresata(Adresat adresat);
+    void wyczyscDaneZWektoraAdresatow();
+    bool czyWektorAdresatowJestPusty();
 };
 
 #endif

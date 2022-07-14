@@ -3,8 +3,7 @@
 #include "KsiazkaAdresowa.h"
 using namespace std;
 
-int main()
-{
+int main() {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
     ksiazkaAdresowa.menuGlowne();
 

@@ -3,8 +3,7 @@
 
 using namespace std;
 
-class KsiazkaAdresowa
-{
+class KsiazkaAdresowa {
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresatMenedzer adresatMenedzer;
     char wybor;
@@ -19,10 +18,16 @@ class KsiazkaAdresowa
     void zmianaHaslaUzytkownika();
     void wylogujUzytkownika();
     bool czyWektorAdresatowJestPusty();
+    int pobierzIdZalogowanegoUzytkownika();
+    int pobierzIdOstatniegoAdresata();
+    void ustawIdOstatniegoAdresata(int noweId);
+    int dodawanieAdresataZPobranymiId();
+    int wczytanieAdresatowDlaZalogowanegoUzytkownika();
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), adresatMenedzer(nazwaPlikuZAdresatami) {
-    uzytkownikMenedzer.wczytajUzytkownikowZPliku();};
+        uzytkownikMenedzer.wczytajUzytkownikowZPliku();
+    };
     void menuGlowne();
 
 };

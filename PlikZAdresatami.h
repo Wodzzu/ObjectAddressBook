@@ -11,23 +11,22 @@
 #include "MetodyPomocnicze.h"
 
 
-class PlikZAdresatami
-{
-int idOstatniegoAdresata;
-const string nazwaPlikuZAdresatami;
+class PlikZAdresatami {
+    int idOstatniegoAdresata;
+    const string nazwaPlikuZAdresatami;
 
-bool czyPlikJestPusty(fstream &plikTekstowy);
-int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
-int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+    bool czyPlikJestPusty(fstream &plikTekstowy);
+    int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+    int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+    Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
 
 public:
-PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
-void dopiszAdresataDoPliku(Adresat adresat);
-int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika,vector <Adresat> &adresaci);
-int ustawIdOstatniegoAdresata(int noweId);
-int pobierzIdOstaniegoAdresata();
+    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
+    void dopiszAdresataDoPliku(Adresat adresat);
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika,vector <Adresat> &adresaci);
+    int ustawIdOstatniegoAdresata(int noweId);
+    int pobierzIdOstaniegoAdresata();
 
 };
 

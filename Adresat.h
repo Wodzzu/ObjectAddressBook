@@ -4,8 +4,7 @@
 
 using namespace std;
 
-class Adresat
-{
+class Adresat {
     int id;
     int idUzytkownika;
     string imie;

@@ -1,59 +1,60 @@
 #include "KsiazkaAdresowa.h"
 
-void KsiazkaAdresowa::rejestracjaUzytkownika()
-{
+void KsiazkaAdresowa::rejestracjaUzytkownika() {
     uzytkownikMenedzer.rejestracjaUzytkownika();
 }
-void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
-{
+void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
     uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }
-void KsiazkaAdresowa::wypiszWszystkichAdresatow()
-{
+void KsiazkaAdresowa::wypiszWszystkichAdresatow() {
     adresatMenedzer.wyswietlWszystkichAdresatow();
 }
-void KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika()
-{
+void KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika() {
     uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(uzytkownikMenedzer.logowanieUzytkownika());
 }
-void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
-{
-    adresatMenedzer.ustawIdOstatniegoAdresata(adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika()));
+void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
+    ustawIdOstatniegoAdresata(wczytanieAdresatowDlaZalogowanegoUzytkownika());
 }
-void KsiazkaAdresowa::dodajAdresata()
-{
-    adresatMenedzer.ustawIdOstatniegoAdresata(adresatMenedzer.dodajAdresata(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika(), adresatMenedzer.pobierzIdOstaniegoAdresata()));
+void KsiazkaAdresowa::dodajAdresata() {
+    ustawIdOstatniegoAdresata(dodawanieAdresataZPobranymiId());
 }
-void KsiazkaAdresowa::zmianaHaslaUzytkownika()
-{
+void KsiazkaAdresowa::zmianaHaslaUzytkownika() {
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
-void KsiazkaAdresowa::wylogujUzytkownika()
-{
+void KsiazkaAdresowa::wylogujUzytkownika() {
     int idUzytkownikaPoWylogowaniu =0;
-     uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(idUzytkownikaPoWylogowaniu);
-     adresatMenedzer.wyczyscDaneZWektoraAdresatow();
+    uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(idUzytkownikaPoWylogowaniu);
+    adresatMenedzer.wyczyscDaneZWektoraAdresatow();
 }
-bool KsiazkaAdresowa::czyWektorAdresatowJestPusty()
-{
+bool KsiazkaAdresowa::czyWektorAdresatowJestPusty() {
     adresatMenedzer.czyWektorAdresatowJestPusty();
 }
-
-void KsiazkaAdresowa::menuGlowne()
-{
-     while (true)
-    {
-        if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika() == 0)
-        {
+int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
+    uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
+}
+int KsiazkaAdresowa::pobierzIdOstatniegoAdresata() {
+    adresatMenedzer.pobierzIdOstaniegoAdresata();
+}
+void KsiazkaAdresowa::ustawIdOstatniegoAdresata(int noweId) {
+    adresatMenedzer.ustawIdOstatniegoAdresata(noweId);
+}
+int KsiazkaAdresowa::dodawanieAdresataZPobranymiId() {
+    adresatMenedzer.dodajAdresata(pobierzIdZalogowanegoUzytkownika(),pobierzIdOstatniegoAdresata());
+}
+int KsiazkaAdresowa::wczytanieAdresatowDlaZalogowanegoUzytkownika() {
+    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(pobierzIdZalogowanegoUzytkownika());
+}
+void KsiazkaAdresowa::menuGlowne() {
+    while (true) {
+        if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika() == 0) {
             wybor = wybierzOpcjeZMenuGlownego();
 
-            switch (wybor)
-            {
+            switch (wybor) {
             case '1':
                 rejestracjaUzytkownika();
                 break;
             case '2':
-               ustawIdZalogowanegoUzytkownika();
+                ustawIdZalogowanegoUzytkownika();
                 break;
             case '9':
                 exit(0);
@@ -63,43 +64,40 @@ void KsiazkaAdresowa::menuGlowne()
                 system("pause");
                 break;
             }
-        }
-        else
-        {
+        } else {
 
-           if (czyWektorAdresatowJestPusty())
+            if (czyWektorAdresatowJestPusty())
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
                 wczytajAdresatowZalogowanegoUzytkownikaZPliku();
             wybor = wybierzOpcjeZMenuUzytkownika();
 
-            switch (wybor)
-            {
+            switch (wybor) {
             case '1':
                 dodajAdresata();
                 break;
             case '2':
-               // wyszukajAdresatowPoImieniu(adresaci);
+                // wyszukajAdresatowPoImieniu(adresaci);
                 break;
             case '3':
-               // wyszukajAdresatowPoNazwisku(adresaci);
+                // wyszukajAdresatowPoNazwisku(adresaci);
                 break;
             case '4':
-                 wypiszWszystkichAdresatow();
+                wypiszWszystkichAdresatow();
                 break;
             case '5':
                 //idUsunietegoAdresata = usunAdresata(adresaci);
-               // idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+                // idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
             case '6':
-               // edytujAdresata(adresaci);
+                // edytujAdresata(adresaci);
                 break;
             case '7':
                 zmianaHaslaUzytkownika();
                 break;
             case '8':
-               wylogujUzytkownika();
+                wylogujUzytkownika();
                 break;
             }
         }
@@ -108,8 +106,7 @@ void KsiazkaAdresowa::menuGlowne()
 }
 
 
-char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
-{
+char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
 
     system("cls");
     cout << "    >>> MENU  GLOWNE <<<" << endl;
@@ -123,8 +120,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 
     return wybor;
 }
-char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
-{
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
     char wybor;
 
     system("cls");

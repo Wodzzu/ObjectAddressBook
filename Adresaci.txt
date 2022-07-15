@@ -1,2 +1,4 @@
-1|1|Asd|Asd|asd|asd|asd|
-2|1|Asd|Asd|asd|asd|asd|
+1|2|Mama|12|asd|af|sdf|
+2|2|Tata|Adsas|das|fas||
+3|1|Brat|Asfafs|sdf|d|gsg|
+4|1|Siostra|Sdg|g|dfg|fdgfg|

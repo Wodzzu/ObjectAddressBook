@@ -19,9 +19,10 @@ class UzytkownikMenedzer {
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
 
+
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
-        idZalogowanegoUzytkownika=0;
+        idZalogowanegoUzytkownika=0,uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
     };
     void zmianaHaslaZalogowanegoUzytkownika();
     int logowanieUzytkownika();
@@ -29,5 +30,5 @@ public:
     int pobierzIdZalogowanegoUzytkownika();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
+    bool czyUzytkownikJestZalogowany();
 };

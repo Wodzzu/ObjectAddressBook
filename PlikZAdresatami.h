@@ -27,7 +27,7 @@ public:
     };
     bool dopiszAdresataDoPliku(Adresat adresat);
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika,vector <Adresat> &adresaci);
-    int ustawIdOstatniegoAdresata(int noweId);
+    void ustawIdOstatniegoAdresata(int noweId);
     int pobierzIdOstaniegoAdresata();
 
 };

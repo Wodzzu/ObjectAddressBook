@@ -17,4 +17,4 @@ public:
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
     static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 };
-#endif MetodyPomocnicze_H
+#endif

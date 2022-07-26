@@ -33,16 +33,25 @@ void KsiazkaAdresowa::wylogujUzytkownika() {
     adresatMenedzer = NULL;
 }
 bool KsiazkaAdresowa::czyWektorAdresatowJestPusty() {
-    adresatMenedzer->czyWektorAdresatowJestPusty();
+    return adresatMenedzer->czyWektorAdresatowJestPusty();
 }
 int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
-    uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
+    return uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
 }
 int KsiazkaAdresowa::pobierzIdOstatniegoAdresata() {
-    adresatMenedzer->pobierzIdOstaniegoAdresata();
+
+    return adresatMenedzer->pobierzIdOstaniegoAdresata();
 }
 void KsiazkaAdresowa::ustawIdOstatniegoAdresata(int noweId) {
     adresatMenedzer->ustawIdOstatniegoAdresata(noweId);
+}
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    adresatMenedzer->wyszukajAdresatowPoImieniu();
+}
+void KsiazkaAdresowa:: wyszukajAdresatowPoNazwisku()
+{
+    adresatMenedzer->wyszukajAdresatowPoNazwisku();
 }
 
 void KsiazkaAdresowa::menuGlowne() {
@@ -74,10 +83,10 @@ void KsiazkaAdresowa::menuGlowne() {
                 dodajAdresata();
                 break;
             case '2':
-                // wyszukajAdresatowPoImieniu(adresaci);
+                wyszukajAdresatowPoImieniu();
                 break;
             case '3':
-                // wyszukajAdresatowPoNazwisku(adresaci);
+                wyszukajAdresatowPoNazwisku();
                 break;
             case '4':
                 wypiszWszystkichAdresatow();

@@ -56,8 +56,8 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow() {
     if (!adresaci.empty()) {
         cout << "             >>> ADRESACI <<<" << endl;
         cout << "-----------------------------------------------" << endl;
-        for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++) {
-            wyswietlDaneAdresata(*itr);
+        for (int i = 0 ; i < adresaci.size(); i++) {
+           wyswietlDaneAdresata(i);
         }
         cout << endl;
     } else {
@@ -65,13 +65,13 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow() {
     }
     system("pause");
 }
-void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat) {
-    cout << endl << "Id:                 " << adresat.pobierzId() << endl;
-    cout << "Imie:               " << adresat.pobierzImie() << endl;
-    cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
-    cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
-    cout << "Email:              " << adresat.pobierzEmail() << endl;
-    cout << "Adres:              " << adresat.pobierzAdres() << endl;
+void AdresatMenedzer::wyswietlDaneAdresata(int i) {
+    cout << endl << "Id:                 " << adresaci[i].pobierzId() << endl;
+    cout << "Imie:               " << adresaci[i].pobierzImie() << endl;
+    cout << "Nazwisko:           " << adresaci[i].pobierzNazwisko() << endl;
+    cout << "Numer telefonu:     " << adresaci[i].pobierzNumerTelefonu() << endl;
+    cout << "Email:              " << adresaci[i].pobierzEmail() << endl;
+    cout << "Adres:              " << adresaci[i].pobierzAdres() << endl;
 }
 
 void AdresatMenedzer::wyczyscDaneZWektoraAdresatow() {
@@ -83,4 +83,72 @@ bool AdresatMenedzer::czyWektorAdresatowJestPusty() {
     else
         return false;
 }
+void AdresatMenedzer::wyszukajAdresatowPoImieniu()
+{
+    string imiePoszukiwanegoAdresata = "";
+    int iloscAdresatow = 0;
 
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << ">>> WYSZUKIWANIE ADRESATOW O IMIENIU <<<" << endl << endl;
+
+        cout << "Wyszukaj adresatow o imieniu: ";
+        imiePoszukiwanegoAdresata = MetodyPomocnicze::wczytajLinie();
+        imiePoszukiwanegoAdresata = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imiePoszukiwanegoAdresata);
+
+        for (int i = 0 ; i < adresaci.size(); i++)
+        {
+            if (adresaci[i].pobierzImie()  == imiePoszukiwanegoAdresata)
+            {
+                wyswietlDaneAdresata(i);
+                iloscAdresatow++;
+            }
+        }
+        wyswietlIloscWyszukanychAdresatow(iloscAdresatow);
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta" << endl << endl;
+    }
+    cout << endl;
+    system("pause");
+}
+void AdresatMenedzer::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow)
+{
+    if (iloscAdresatow == 0)
+        cout << endl << "W ksiazce adresowej nie ma adresatow z tymi danymi." << endl;
+    else
+        cout << endl << "Ilosc adresatow w ksiazce adresowej wynosi: " << iloscAdresatow << endl << endl;
+}
+void AdresatMenedzer::wyszukajAdresatowPoNazwisku()
+{
+    string nazwiskoPoszukiwanegoAdresata;
+    int iloscAdresatow = 0;
+
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << ">>> WYSZUKIWANIE ADRESATOW O NAZWISKU <<<" << endl << endl;
+
+        cout << "Wyszukaj adresatow o nazwisku: ";
+        nazwiskoPoszukiwanegoAdresata = MetodyPomocnicze::wczytajLinie();
+        nazwiskoPoszukiwanegoAdresata = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwiskoPoszukiwanegoAdresata);
+
+        for (int i = 0 ; i < adresaci.size(); i++)
+        {
+            if (adresaci[i].pobierzNazwisko() == nazwiskoPoszukiwanegoAdresata)
+            {
+                wyswietlDaneAdresata(i);
+                iloscAdresatow++;
+            }
+        }
+         wyswietlIloscWyszukanychAdresatow(iloscAdresatow);
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+    }
+    cout << endl;
+    system("pause");
+}

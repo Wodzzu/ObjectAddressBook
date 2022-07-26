@@ -26,6 +26,8 @@ class KsiazkaAdresowa {
     void ustawIdOstatniegoAdresata(int noweId);
     int dodawanieAdresataZPobranymiId();
     int wczytanieAdresatowDlaZalogowanegoUzytkownika();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)

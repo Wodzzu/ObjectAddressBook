@@ -27,9 +27,12 @@ public:
     int pobierzIdOstaniegoAdresata();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    void wyswietlDaneAdresata(Adresat adresat);
+    void wyswietlDaneAdresata(int i);
     void wyczyscDaneZWektoraAdresatow();
     bool czyWektorAdresatowJestPusty();
+    void wyszukajAdresatowPoImieniu();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif

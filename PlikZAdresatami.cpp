@@ -110,7 +110,7 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
     }
     return adresat;
 }
-int PlikZAdresatami::ustawIdOstatniegoAdresata(int noweId) {
+void PlikZAdresatami::ustawIdOstatniegoAdresata(int noweId) {
     if(noweId>=0)
         idOstatniegoAdresata=noweId;
 }

@@ -45,17 +45,17 @@ int KsiazkaAdresowa::pobierzIdOstatniegoAdresata() {
 void KsiazkaAdresowa::ustawIdOstatniegoAdresata(int noweId) {
     adresatMenedzer->ustawIdOstatniegoAdresata(noweId);
 }
-void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
-{
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu() {
     adresatMenedzer->wyszukajAdresatowPoImieniu();
 }
-void KsiazkaAdresowa:: wyszukajAdresatowPoNazwisku()
-{
+void KsiazkaAdresowa:: wyszukajAdresatowPoNazwisku() {
     adresatMenedzer->wyszukajAdresatowPoNazwisku();
 }
-void KsiazkaAdresowa::usunAdresata()
-{
-      adresatMenedzer->usunAdresata();
+void KsiazkaAdresowa::usunAdresata() {
+    adresatMenedzer->usunAdresata();
+}
+void KsiazkaAdresowa::edytujAdresata() {
+    adresatMenedzer->edytujAdresata();
 }
 
 void KsiazkaAdresowa::menuGlowne() {
@@ -99,7 +99,7 @@ void KsiazkaAdresowa::menuGlowne() {
                 usunAdresata();
                 break;
             case '6':
-                // edytujAdresata(adresaci);
+                edytujAdresata();
                 break;
             case '7':
                 zmianaHaslaUzytkownika();

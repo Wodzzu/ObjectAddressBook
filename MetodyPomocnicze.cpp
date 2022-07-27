@@ -52,13 +52,11 @@ string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst
     }
     return tekst;
 }
-int MetodyPomocnicze::wczytajLiczbeCalkowita()
-{
+int MetodyPomocnicze::wczytajLiczbeCalkowita() {
     string wejscie = "";
     int liczba = 0;
 
-    while (true)
-    {
+    while (true) {
         getline(cin, wejscie);
 
         stringstream myStream(wejscie);

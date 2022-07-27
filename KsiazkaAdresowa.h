@@ -28,6 +28,7 @@ class KsiazkaAdresowa {
     int wczytanieAdresatowDlaZalogowanegoUzytkownika();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
+    void usunAdresata();
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)

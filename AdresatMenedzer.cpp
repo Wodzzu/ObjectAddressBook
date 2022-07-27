@@ -152,3 +152,8 @@ void AdresatMenedzer::wyszukajAdresatowPoNazwisku()
     cout << endl;
     system("pause");
 }
+void AdresatMenedzer::usunAdresata()
+{
+    plikZAdresatami.usunAdresata(adresaci);
+    plikZAdresatami.podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata();
+}

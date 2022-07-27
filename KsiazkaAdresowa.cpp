@@ -53,6 +53,10 @@ void KsiazkaAdresowa:: wyszukajAdresatowPoNazwisku()
 {
     adresatMenedzer->wyszukajAdresatowPoNazwisku();
 }
+void KsiazkaAdresowa::usunAdresata()
+{
+      adresatMenedzer->usunAdresata();
+}
 
 void KsiazkaAdresowa::menuGlowne() {
     while (true) {
@@ -92,8 +96,7 @@ void KsiazkaAdresowa::menuGlowne() {
                 wypiszWszystkichAdresatow();
                 break;
             case '5':
-                //idUsunietegoAdresata = usunAdresata(adresaci);
-                // idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+                usunAdresata();
                 break;
             case '6':
                 // edytujAdresata(adresaci);

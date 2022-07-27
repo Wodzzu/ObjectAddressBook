@@ -1,5 +1,5 @@
-1|2|Mama|12|asd|af|sdf|
-2|2|Tata|Adsas|das|fas||
-3|1|Brat|Asfafs|sdf|d|gsg|
-4|1|Siostra|Sdg|g|dfg|fdgfg|
-5|2|Mama|Sdfdsf|sdf|dsfs|df|
+2|2|Bogdan|Zmijewski|123124124|bogdan@.pl|parzasna 16|
+3|2|Maciek|Plakwicz|2124124|maciej@wp.pl|hawjaksa 12|
+5|1|Szymon|Strzalkowski|24214124|szymon@.pl|kalen 13|
+6|1|Anna|Redzikowska|12414142|anna@.pl|gostynin gorksa 90|
+7|2|Hania|Mostowiak|124124|kartiony|medzyzdroje|

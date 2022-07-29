@@ -1,5 +1,6 @@
-2|2|Bogdan|Zmijewski|123124124|bogdan@.pl|parzasna 16|
-3|2|Maciek|Plakwicz|2124124|maciej@wp.pl|hawjaksa 12|
+1|2|Ania|Strzalkowski|24214124|szymon@.pl|kalen 13|
+2|2|Michal|Strzalkowski|24214124|szymon@.pl|kalen 13|
+3|2|Kuba|Strzalkowski|24214124|szymon@.pl|kalen 13|
+4|1|Bogdan|Strzalkowski|24214124|szymon@.pl|kalen 13|
 5|1|Szymon|Strzalkowski|24214124|szymon@.pl|kalen 13|
 6|1|Anna|Redzikowska|12414142|anna@.pl|gostynin gorksa 90|
-7|2|Aneczka|Mostowiak|124124|kartiony|wilkowyje 15/23|

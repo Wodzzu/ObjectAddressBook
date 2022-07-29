@@ -33,19 +33,17 @@ public:
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika,vector <Adresat> &adresaci);
     void ustawIdOstatniegoAdresata(int noweId);
     int pobierzIdOstaniegoAdresata();
-    int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
     void usunWybranaLinieWPliku(int numerUsuwanejLinii);
     void ustawIdUsuwanegoAdresata(int noweId);
     int pobierzIdUsuwanegoAdresata();
     int podajIdWybranegoAdresata();
-    int zwrocNumerLiniiSzukanegoAdresata();
     int usunAdresata(vector <Adresat> &adresaci);
     int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata();
     int pobierzZPlikuIdOstatniegoAdresata();
     void edytujAdresata(vector <Adresat> &adresaci);
     char wybierzOpcjeZMenuEdycja();
-    void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
-    void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
+    void usunAdresataZPliku(int idAdresata);
+    void edytujAdresataWPliku(Adresat adresat);
 };
 
 #endif

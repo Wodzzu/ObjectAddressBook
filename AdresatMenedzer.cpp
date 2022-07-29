@@ -2,7 +2,7 @@
 
 
 int AdresatMenedzer::pobierzIdOstaniegoAdresata() {
-    plikZAdresatami.pobierzIdOstaniegoAdresata();
+    return plikZAdresatami.pobierzIdOstaniegoAdresata();
 }
 void AdresatMenedzer::ustawIdOstatniegoAdresata(int noweId) {
     if(noweId>=0)

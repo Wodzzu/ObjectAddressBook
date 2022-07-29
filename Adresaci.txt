@@ -1,4 +1,6 @@
-1|2|Mama|12|asd|af|sdf|
-2|2|Tata|Adsas|das|fas||
-3|1|Brat|Asfafs|sdf|d|gsg|
-4|1|Siostra|Sdg|g|dfg|fdgfg|
+1|2|Ania|Strzalkowski|24214124|szymon@.pl|kalen 13|
+2|2|Michal|Strzalkowski|24214124|szymon@.pl|kalen 13|
+3|2|Kuba|Strzalkowski|24214124|szymon@.pl|kalen 13|
+4|1|Bogdan|Strzalkowski|24214124|szymon@.pl|kalen 13|
+5|1|Szymon|Strzalkowski|24214124|szymon@.pl|kalen 13|
+6|1|Anna|Redzikowska|12414142|anna@.pl|gostynin gorksa 90|

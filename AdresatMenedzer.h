@@ -15,24 +15,23 @@ class AdresatMenedzer {
     PlikZAdresatami plikZAdresatami;
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
-    Adresat podajDaneNowegoAdresata();
 
+    Adresat podajDaneNowegoAdresata();
+    void wyswietlDaneAdresata(int i);
+    void wyczyscDaneZWektoraAdresatow();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
         : plikZAdresatami(nazwaPlikuZAdresatami),ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
         plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA,adresaci);
     };
-
-    void ustawIdOstatniegoAdresata(int noweId);
-    int pobierzIdOstaniegoAdresata();
-    void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    void wyswietlDaneAdresata(int i);
-    void wyczyscDaneZWektoraAdresatow();
+    void dodajAdresata();
     bool czyWektorAdresatowJestPusty();
+    int pobierzIdOstaniegoAdresata();
+    void ustawIdOstatniegoAdresata(int noweId);
     void wyszukajAdresatowPoImieniu();
-    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     void wyszukajAdresatowPoNazwisku();
     void usunAdresata();
     void edytujAdresata();

@@ -1,6 +1,3 @@
-1|2|Ania|Strzalkowski|24214124|szymon@.pl|kalen 13|
-2|2|Michal|Strzalkowski|24214124|szymon@.pl|kalen 13|
-3|2|Kuba|Strzalkowski|24214124|szymon@.pl|kalen 13|
-4|1|Bogdan|Strzalkowski|24214124|szymon@.pl|kalen 13|
-5|1|Szymon|Strzalkowski|24214124|szymon@.pl|kalen 13|
-6|1|Anna|Redzikowska|12414142|anna@.pl|gostynin gorksa 90|
+1|1|Michal|Gaj|123|easd|gostynin klonowa|
+3|1|Jaroslaw|Kaczynski|123142|asfsdkdj|zoliborz warszawa|
+4|2|Maciek|Maciek|maciek|maciek|maciek|

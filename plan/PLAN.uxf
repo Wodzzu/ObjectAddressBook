@@ -110,8 +110,8 @@ public:
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>700</y>
+      <x>80</x>
+      <y>390</y>
       <w>500</w>
       <h>150</h>
     </coordinates>
@@ -128,23 +128,19 @@ public:
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
-      <y>360</y>
-      <w>570</w>
-      <h>240</h>
+      <x>1070</x>
+      <y>500</y>
+      <w>480</w>
+      <h>230</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
--const string nazwaPlikuZUzytkownikami;
---
 -Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
--bool czyPlikJestPusty(fstream &amp;plikTekstowy);
 -string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
 
 public:
 +void zapiszWszystkichUzytkownikowDoPliku(vector &lt;Uzytkownik&gt; &amp;uzytkownicy);
 +void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
-+PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI) {};
 +vector &lt;Uzytkownik&gt; wczytajUzytkownikowZPliku();</panel_attributes>
     <additional_attributes/>
   </element>
@@ -180,45 +176,103 @@ public:
 -PlikZAdresatami plikZAdresatami;
 -const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 -vector &lt;Adresat&gt; adresaci;
--Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+--
+Adresat podajDaneNowegoAdresata();
+-void wyswietlDaneAdresata(int i);
+-void wyczyscDaneZWektoraAdresatow();
+-void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 --
 public:
 +AdresatMenedzer()
 
-+void ustawIdOstatniegoAdresata(int noweId);
-+int pobierzIdOstaniegoAdresata();
-+void dodajAdresata();
 +void wyswietlWszystkichAdresatow();
-+void wyswietlDaneAdresata(Adresat adresat);
-+void wyczyscDaneZWektoraAdresatow();
-+bool czyWektorAdresatowJestPusty();</panel_attributes>
++void dodajAdresata();
++bool czyWektorAdresatowJestPusty();
++int pobierzIdOstaniegoAdresata();
++void ustawIdOstatniegoAdresata(int noweId);
++void wyszukajAdresatowPoImieniu();
++void wyszukajAdresatowPoNazwisku();
++void usunAdresata();
++void edytujAdresata();</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1190</x>
-      <y>400</y>
+      <x>720</x>
+      <y>500</y>
       <w>320</w>
       <h>390</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
 -int idOstatniegoAdresata;
--const string nazwaPlikuZAdresatami;
+-int idUsunietegoAdresata;
+string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
 --
--bool czyPlikJestPusty(fstream &amp;plikTekstowy);
 -int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 -string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 -int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 -Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+-void usunPlik(string nazwaPlikuZRozszerzeniem);
+-void zmienNazwePliku(string staraNazwa, string nowaNazwa);
+-void usunWybranaLinieWPliku(int numerUsuwanejLinii);
+-void ustawIdUsuwanegoAdresata(int noweId);
+-int pobierzIdUsuwanegoAdresata();
+-int podajIdWybranegoAdresata();
+-int pobierzZPlikuIdOstatniegoAdresata();
+-char wybierzOpcjeZMenuEdycja();
+-void usunAdresataZPliku(int idAdresata);
+-void edytujAdresataWPliku(Adresat adresat);
 
 public:
-+PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
-+bool dopiszAdresataDoPliku(Adresat adresat);
++PlikZAdresatami(string nazwaPliku) : PlikTekstowy(nazwaPliku){}
 +int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika,vector &lt;Adresat&gt; &amp;adresaci);
-+int ustawIdOstatniegoAdresata(int noweId);
-+int pobierzIdOstaniegoAdresata();</panel_attributes>
++int pobierzIdOstaniegoAdresata();
++void ustawIdOstatniegoAdresata(int noweId);
++bool dopiszAdresataDoPliku(Adresat adresat);
++int usunAdresata(vector &lt;Adresat&gt; &amp;adresaci);
++int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata();
++void edytujAdresata(vector &lt;Adresat&gt; &amp;adresaci);</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>360</y>
+      <w>280</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>PlikTekstowy
+-
+const string NAZWA_PLIKU;
+-
++PlikTekstowy(string nazwaPliku): NAZWA_PLIKU(nazwaPliku){};
++string pobierzNazwePliku();
++bool czyPlikJestPusty();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1110</x>
+      <y>360</y>
+      <w>150</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;130.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>730</x>
+      <y>360</y>
+      <w>170</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;150.0;150.0;10.0</additional_attributes>
   </element>
 </diagram>

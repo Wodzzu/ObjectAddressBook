@@ -1,3 +1,6 @@
+#ifndef PlikZUzytkownikami_H
+#define PlikZUzytkownikami_H
+
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -5,20 +8,22 @@
 
 #include "MetodyPomocnicze.h"
 #include "Uzytkownik.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
-class PlikZUzytkownikami {
-    const string NAZWA_PLIKU_Z_UZYTKOWNIKAMI;
+class PlikZUzytkownikami: public PlikTekstowy {
 
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
-    bool czyPlikJestPusty(fstream &plikTekstowy);
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
 
 public:
+    PlikZUzytkownikami(string nazwaPliku) : PlikTekstowy(nazwaPliku) {
+    };
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
-    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : NAZWA_PLIKU_Z_UZYTKOWNIKAMI(NAZWAPLIKUZUZYTKOWNIKAMI) {};
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
 
 };
+
+#endif

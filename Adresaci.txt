@@ -1,3 +1,5 @@
 1|1|Michal|Gaj|123|easd|gostynin klonowa|
 3|1|Jaroslaw|Kaczynski|123142|asfsdkdj|zoliborz warszawa|
 4|2|Maciek|Maciek|maciek|maciek|maciek|
+6|1|Hania|1|1|1|11|
+7|1|Jaroslaw||a|a|a|

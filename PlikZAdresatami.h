@@ -41,7 +41,7 @@ public:
     void ustawIdOstatniegoAdresata(int noweId);
     bool dopiszAdresataDoPliku(Adresat adresat);
     int usunAdresata(vector <Adresat> &adresaci);
-    int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata();
+    void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata();
     void edytujAdresata(vector <Adresat> &adresaci);
 };
 

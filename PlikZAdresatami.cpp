@@ -226,6 +226,7 @@ int PlikZAdresatami::usunAdresata(vector <Adresat> &adresaci) {
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
     }
+
     return 0;
 }
 void PlikZAdresatami::ustawIdUsuwanegoAdresata(int idAdresataDoUsuniecia) {
@@ -243,14 +244,12 @@ int PlikZAdresatami::pobierzIdUsuwanegoAdresata() {
     return idUsunietegoAdresata;
 }
 
-int PlikZAdresatami::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata() {
+void PlikZAdresatami::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata() {
     if ( pobierzIdUsuwanegoAdresata() == pobierzIdOstaniegoAdresata())
-        return pobierzZPlikuIdOstatniegoAdresata();
-    else
-        return idOstatniegoAdresata;
+        ustawIdOstatniegoAdresata(pobierzZPlikuIdOstatniegoAdresata());
 }
 int PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata() {
-    int idOstatniegoAdresata = 0;
+    //int idOstatniegoAdresata = 0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;

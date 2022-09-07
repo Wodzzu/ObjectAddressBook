@@ -117,12 +117,12 @@ public:
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 --
-+ konwerjsaIntNaString(int liczba) : Static String 
-+ wczytajZnak() : Static Char
-+ wczytajLinie() : Static String
-+ konwersjaStringNaInt(string liczba) : Static Integer
-+ pobierzLiczbe(string tekst, int pozycjaZnaku) : Static String
-+ zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst) : Static String</panel_attributes>
+_+ konwerjsaIntNaString(int liczba) : String_
+_+ wczytajZnak() : Char_
+_+ wczytajLinie() : String_
+_+ konwersjaStringNaInt(string liczba) : Integer_
+_+ pobierzLiczbe(string tekst, int pozycjaZnaku) : String_
+_+ zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst) : String_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
